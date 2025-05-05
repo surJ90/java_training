@@ -12,9 +12,9 @@ class Parent {
         System.out.println("Static method");
     }
     // 4. Private method
-    private void privateMethod() {
-        System.out.println("Private method");
-    }
+    // private void privateMethod() {
+    //     System.out.println("Private method");
+    // }
     // 5. Covarient return type
     Parent getObject() {
         return this;
@@ -37,9 +37,9 @@ class Child extends Parent {
     static void staticMethod() { // static method cannot be overridden, can be hidden
         System.out.println("Child static");
     }
-    void privateMethod() { // not inherited, not overridden
-        System.out.println("Child private");
-    }
+    // void privateMethod() { // not inherited, not overridden
+    //     System.out.println("Child private");
+    // }
     @Override
     Child getObject() { // Covarient return type
         return this;
@@ -59,5 +59,7 @@ public class OverridingDemo {
         System.out.println(parent.getObject().getClass());
         Parent.staticMethod();
         Child.staticMethod();
+        Parent p = new Parent();
+        p.finalMethod();
     }
 }
